@@ -1,0 +1,121 @@
+{
+  "keywords": [
+    "react",
+    "reactjs",
+    "webpack",
+    "boilerplate",
+    "tailwind"
+  ],
+  "license": "MIT",
+  "name": "react-webpack-5-tailwind-2",
+  "version": "1.0.1",
+  "description": "Webpack 6 boilerplate with React 17, Tailwind 2, using babel, sass, with HMR and an optimized production build",
+  "dependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.21",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.13",
+    "@types/react-redux": "^7.1.23",
+    "axios": "^0.26.0",
+    "formik": "^2.2.9",
+    "jest": "^27.0.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.2",
+    "redux": "^4.1.2",
+    "request": "^2.88.2",
+    "tailwindcss": "2.2.19",
+    "typescript": "^4.6.2",
+    "uuid": "^8.3.2",
+    "xp.css": "^0.3.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack serve --config config/webpack.dev.js",
+    "build": "NODE_ENV=production webpack --config config/webpack.prod.js",
+    "build-staging": "NODE_ENV=production webpack --config config/webpack.stag.js",
+    "prettify": "yarn prettier \"**/*.*(js|jsx)\" --ignore-path=.prettierignore --write",
+    "lint": "eslint src --ext .js,.jsx && yarn prettify",
+    "lint-fix": "eslint src --ext .js,.jsx --fix && yarn prettify",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged --verbose"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
+    "@svgr/webpack": "^6.2.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "@types/redux-logger": "^3.0.9",
+    "@types/webpack": "^5.28.0",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "autoprefixer": "^10.3.1",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "*",
+    "copy-webpack-plugin": "10.2.4",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "dotenv-webpack": "^7.0.3",
+    "eslint": "8.10.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-node": "^0.3.6",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "^7.29.3",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-webpack-plugin": "^3.1.1",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "lint-staged": "12.3.5",
+    "mini-css-extract-plugin": "^2.2.0",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.3.6",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^6.1.1",
+    "prettier": "^2.3.2",
+    "react-refresh": "0.11.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "terser-webpack-plugin": "^5.1.4",
+    "ts-loader": "^9.2.7",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0"
+  }
+}
